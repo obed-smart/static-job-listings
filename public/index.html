@@ -18,198 +18,222 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 </head>
 
-<body class="bg-LightGrayishBackground w-full min-h-screen">
+<body class="bg-LightGrayishBackground w-full min-h-screen ">
 
-  <header class="w-full h-26 bg-DesaturatedDarkCyan overflow-hidden sticky top-0">
-    <img src="./images/bg-header-desktop.svg" alt="" class="w-full ">
+  <header class="w-full  z-10 h-38 md:h-[9rem] lg:h-32 bg-DesaturatedDarkCyan sticky top-0">
+    <section class="w-full h-full relative">
+      <article class="overflow-hidden h-full">
+        <picture>
+          <source media="(min-width:1024px)" srcset="./images/bg-header-desktop.svg" class="w-full">
+          <img src="./images/bg-header-mobile.svg" alt="Flowers" class="w-full">
+        </picture>
+      </article>
+
+      <section
+        class="max-w-[1150px] rounded-md flex justify-between overflow-hidden mx-auto bg-white p-5  w-[calc(100%-10px)] absolute lg:top-20 top-0  left-0 right-0  z-40">
+        <article class="   categories flex gap-5 flex-wrap  ">
+
+        </article>
+
+        <button id="clearbtn" class="text-xl text-DesaturatedDarkCyan font-semibold hover:underline transition-all duration-300">clear</button>
+      </section>
+
+    </section>
   </header>
 
-  <main class="max-w-[1250px] px-10 mx-auto mt-20 grid gap-5 [&>article]:bg-white [&>article]:px-5 [&>article]:py-8">
-    <article class="flex justify-between items-center rounded-md border-l-4 border-l-DesaturatedDarkCyan">
-      <header class="flex gap-6 items-center">
-        <img src="./images/photosnap.svg" alt="Photosnap logo" class="w-20">
-        <div class="space-y-2">
-          <div class="flex gap-4 font-semibold items-center">
-            <p class="text-DesaturatedDarkCyan">Photosnap</p>
-            <p class="px-3 py-[2px] text-LightGrayishCyanFilter rounded-full bg-DesaturatedDarkCyan">New!</p>
-            <p class="px-3 py-[2px] text-LightGrayishCyanFilter rounded-full bg-VeryDarkGrayishCyan">Featured</p>
-          </div>
-          <h2 class="text-[20px] font-bold text-VeryDarkGrayishCyan">Senior Frontend Developer</h2>
-          <div class="flex items-center gap-5 text-DarkGrayishCyan text-[17px] font-medium">
-            <time datetime="2023-10-01">1d ago</time>
-            <span class="w-[3px] aspect-square bg-DarkGrayishCyan"></span>
-            <p>Full Time</p>
-            <span class="w-[3px] aspect-square bg-DarkGrayishCyan"></span>
-            <p>USA only</p>
-          </div>
-        </div>
-      </header>
-      <div>
-        <ul class="flex gap-5 [&>li]:bg-LightGrayishCyanFilter [&>li]:py-1 [&>li]:px-2  items-center text-DesaturatedDarkCyan font-semibold text-[18px] [&>li]:rounded-md">
-          <li>Frontend</li>
-          <li>Senior</li>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-        </ul>
-      </div>
-    </article>
-    <article class="flex justify-between items-center rounded-md border-l-4 border-l-DesaturatedDarkCyan">
-      <header class="flex gap-6 items-center">
-        <img src="./images/photosnap.svg" alt="Photosnap logo" class="w-20">
-        <div class="space-y-2">
-          <div class="flex gap-4 font-semibold items-center">
-            <p class="text-DesaturatedDarkCyan">Photosnap</p>
-            <p class="px-3 py-[2px] text-LightGrayishCyanFilter rounded-full bg-DesaturatedDarkCyan">New!</p>
-            <p class="px-3 py-[2px] text-LightGrayishCyanFilter rounded-full bg-VeryDarkGrayishCyan">Featured</p>
-          </div>
-          <h2 class="text-[20px] font-bold text-VeryDarkGrayishCyan">Senior Frontend Developer</h2>
-          <div class="flex items-center gap-5 text-DarkGrayishCyan text-[17px] font-medium">
-            <time datetime="2023-10-01">1d ago</time>
-            <span class="w-[3px] aspect-square bg-DarkGrayishCyan"></span>
-            <p>Full Time</p>
-            <span class="w-[3px] aspect-square bg-DarkGrayishCyan"></span>
-            <p>USA only</p>
-          </div>
-        </div>
-      </header>
-      <div>
-        <ul class="flex gap-5 [&>li]:bg-LightGrayishCyanFilter [&>li]:py-1 [&>li]:px-2  items-center text-DesaturatedDarkCyan font-semibold text-[18px] [&>li]:rounded-md">
-          <li>Frontend</li>
-          <li>Senior</li>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-        </ul>
-      </div>
-    </article>
+  <main id="main" class="max-w-[1220px] gap-16 lg:px-10 grid lg:gap-5  px-5 mx-auto my-20 ">
 
-    <article>
-      <header>
-        <div>
-          <p>Manage</p>
-          <p>New!</p>
-          <p>Featured</p>
-        </div>
-        <h2>Fullstack Developer</h2>
-        <div>
-          <time datetime="2023-10-01">1d ago</time>
-          <p>Part Time</p>
-          <p>Remote</p>
-        </div>
-      </header>
-      <div>
-        <h3>Role</h3>
-        <p>Fullstack</p>
-        <h3>Level</h3>
-        <p>Midweight</p>
-        <h3>Languages</h3>
-        <ul>
-          <li>Python</li>
-        </ul>
-        <h3>Tools</h3>
-        <ul>
-          <li>React</li>
-        </ul>
-      </div>
-    </article>
-    <!-- Item End -->
 
-    <!-- Item Start -->
-    <article>
-      <header>
+    <!-- <article
+        class="flex bg-white flex-col relative px-5 lg:flex-row py-6 justify-start  lg:justify-between  lg:items-center rounded-md border-l-4 border-l-DesaturatedDarkCyan">
+        <header
+          class="flex gap-6 items-center lg:mb-0 mb-5 lg:border-b-0 border-b-[1px] border-b-DarkGrayishCyan  lg:p-0 py-5">
+          <img src="./images/photosnap.svg" alt="Photosnap logo" class="w-20 -top-10 lg:top-auto  lg:relative absolute">
+          <div class="space-y-2">
+            <div class="flex gap-4 font-semibold items-center">
+              <p class="text-DesaturatedDarkCyan">Photosnap</p>
+              <p class="px-3 py-[2px] ml-3 lg:m-0 text-LightGrayishCyanFilter rounded-full bg-DesaturatedDarkCyan">New!
+              </p>
+              <p class="px-3 py-[2px] text-LightGrayishCyanFilter rounded-full bg-VeryDarkGrayishCyan">Featured</p>
+            </div>
+            <h2 class="text-[20px] font-bold hover:text-DesaturatedDarkCyan cursor-pointer text-VeryDarkGrayishCyan">
+              Senior Frontend Developer</h2>
+            <div class="flex items-center gap-5 text-DarkGrayishCyan text-[17px] font-medium">
+              <time datetime="2023-10-01">1d ago</time>
+              <span class="w-[3px] aspect-square bg-DarkGrayishCyan"></span>
+              <p>Full Time</p>
+              <span class="w-[3px] aspect-square bg-DarkGrayishCyan"></span>
+              <p>USA only</p>
+            </div>
+          </div>
+        </header>
         <div>
-          <p>Account</p>
-          <p>New!</p>
+          <ul
+            class="flex flex-wrap  gap-5 [&>li]:bg-LightGrayishCyanFilter [&>li]:py-1 [&>li]:px-2  items-center text-DesaturatedDarkCyan font-semibold text-[18px] [&>li]:rounded-md">
+            <li
+              class="hover:bg-DesaturatedDarkCyan cursor-pointer hover:text-LightGrayishCyanFilter transition-all duration-300">
+              Frontend</li>
+            <li
+              class="hover:bg-DesaturatedDarkCyan cursor-pointer hover:text-LightGrayishCyanFilter transition-all duration-300">
+              Senior</li>
+            <li
+              class="hover:bg-DesaturatedDarkCyan cursor-pointer hover:text-LightGrayishCyanFilter transition-all duration-300">
+              HTML</li>
+            <li
+              class="hover:bg-DesaturatedDarkCyan cursor-pointer hover:text-LightGrayishCyanFilter transition-all duration-300">
+              CSS</li>
+            <li
+              class="hover:bg-DesaturatedDarkCyan cursor-pointer hover:text-LightGrayishCyanFilter transition-all duration-300">
+              JavaScript</li>
+          </ul>
         </div>
-        <h2>Junior Frontend Developer</h2>
+      </article>
+      <article
+        class="flex bg-white flex-col relative px-5 lg:flex-row py-6 justify-start  lg:justify-between  lg:items-center rounded-md border-l-4 border-l-DesaturatedDarkCyan">
+        <header
+          class="flex gap-6 items-center lg:mb-0 mb-5 lg:border-b-0 border-b-[1px] border-b-DarkGrayishCyan  lg:p-0 py-5">
+          <img src="./images/photosnap.svg" alt="Photosnap logo" class="w-20 -top-10 lg:top-auto  lg:relative absolute">
+          <div class="space-y-2">
+            <div class="flex gap-4 font-semibold items-center">
+              <p class="text-DesaturatedDarkCyan">Photosnap</p>
+              <p class="px-3 py-[2px] ml-3 lg:m-0 text-LightGrayishCyanFilter rounded-full bg-DesaturatedDarkCyan">New!
+              </p>
+              <p class="px-3 py-[2px] text-LightGrayishCyanFilter rounded-full bg-VeryDarkGrayishCyan">Featured</p>
+            </div>
+            <h2 class="text-[20px] font-bold hover:text-DesaturatedDarkCyan cursor-pointer text-VeryDarkGrayishCyan">
+              Senior Frontend Developer</h2>
+            <div class="flex items-center gap-5 text-DarkGrayishCyan text-[17px] font-medium">
+              <time datetime="2023-10-01">1d ago</time>
+              <span class="w-[3px] aspect-square bg-DarkGrayishCyan"></span>
+              <p>Full Time</p>
+              <span class="w-[3px] aspect-square bg-DarkGrayishCyan"></span>
+              <p>USA only</p>
+            </div>
+          </div>
+        </header>
         <div>
-          <time datetime="2023-09-30">2d ago</time>
-          <p>Part Time</p>
-          <p>USA only</p>
+          <ul
+            class="flex flex-wrap  gap-5 [&>li]:bg-LightGrayishCyanFilter [&>li]:py-1 [&>li]:px-2  items-center text-DesaturatedDarkCyan font-semibold text-[18px] [&>li]:rounded-md">
+            <li
+              class="hover:bg-DesaturatedDarkCyan cursor-pointer hover:text-LightGrayishCyanFilter transition-all duration-300">
+              Frontend</li>
+            <li
+              class="hover:bg-DesaturatedDarkCyan cursor-pointer hover:text-LightGrayishCyanFilter transition-all duration-300">
+              Senior</li>
+            <li
+              class="hover:bg-DesaturatedDarkCyan cursor-pointer hover:text-LightGrayishCyanFilter transition-all duration-300">
+              HTML</li>
+            <li
+              class="hover:bg-DesaturatedDarkCyan cursor-pointer hover:text-LightGrayishCyanFilter transition-all duration-300">
+              CSS</li>
+            <li
+              class="hover:bg-DesaturatedDarkCyan cursor-pointer hover:text-LightGrayishCyanFilter transition-all duration-300">
+              JavaScript</li>
+          </ul>
         </div>
-      </header>
-      <div>
-        <h3>Role</h3>
-        <p>Frontend</p>
-        <h3>Level</h3>
-        <p>Junior</p>
-        <h3>Languages</h3>
-        <ul>
-          <li>JavaScript</li>
-        </ul>
-        <h3>Tools</h3>
-        <ul>
-          <li>React</li>
-          <li>Sass</li>
-        </ul>
-      </div>
-    </article>
-    <!-- Item End -->
+      </article>
+      <article
+        class="flex bg-white flex-col relative px-5 lg:flex-row py-6 justify-start  lg:justify-between  lg:items-center rounded-md border-l-4 border-l-DesaturatedDarkCyan">
+        <header
+          class="flex gap-6 items-center lg:mb-0 mb-5 lg:border-b-0 border-b-[1px] border-b-DarkGrayishCyan  lg:p-0 py-5">
+          <img src="./images/photosnap.svg" alt="Photosnap logo" class="w-20 -top-10 lg:top-auto  lg:relative absolute">
+          <div class="space-y-2">
+            <div class="flex gap-4 font-semibold items-center">
+              <p class="text-DesaturatedDarkCyan">Photosnap</p>
+              <p class="px-3 py-[2px] ml-3 lg:m-0 text-LightGrayishCyanFilter rounded-full bg-DesaturatedDarkCyan">New!
+              </p>
+              <p class="px-3 py-[2px] text-LightGrayishCyanFilter rounded-full bg-VeryDarkGrayishCyan">Featured</p>
+            </div>
+            <h2 class="text-[20px] font-bold hover:text-DesaturatedDarkCyan cursor-pointer text-VeryDarkGrayishCyan">
+              Senior Frontend Developer</h2>
+            <div class="flex items-center gap-5 text-DarkGrayishCyan text-[17px] font-medium">
+              <time datetime="2023-10-01">1d ago</time>
+              <span class="w-[3px] aspect-square bg-DarkGrayishCyan"></span>
+              <p>Full Time</p>
+              <span class="w-[3px] aspect-square bg-DarkGrayishCyan"></span>
+              <p>USA only</p>
+            </div>
+          </div>
+        </header>
+        <div>
+          <ul
+            class="flex flex-wrap  gap-5 [&>li]:bg-LightGrayishCyanFilter [&>li]:py-1 [&>li]:px-2  items-center text-DesaturatedDarkCyan font-semibold text-[18px] [&>li]:rounded-md">
+            <li
+              class="hover:bg-DesaturatedDarkCyan cursor-pointer hover:text-LightGrayishCyanFilter transition-all duration-300">
+              Frontend</li>
+            <li
+              class="hover:bg-DesaturatedDarkCyan cursor-pointer hover:text-LightGrayishCyanFilter transition-all duration-300">
+              Senior</li>
+            <li
+              class="hover:bg-DesaturatedDarkCyan cursor-pointer hover:text-LightGrayishCyanFilter transition-all duration-300">
+              HTML</li>
+            <li
+              class="hover:bg-DesaturatedDarkCyan cursor-pointer hover:text-LightGrayishCyanFilter transition-all duration-300">
+              CSS</li>
+            <li
+              class="hover:bg-DesaturatedDarkCyan cursor-pointer hover:text-LightGrayishCyanFilter transition-all duration-300">
+              JavaScript</li>
+          </ul>
+        </div>
+      </article>
+      <article
+        class="flex bg-white flex-col relative px-5 lg:flex-row py-6 justify-start  lg:justify-between  lg:items-center rounded-md border-l-4 border-l-DesaturatedDarkCyan">
+        <header
+          class="flex gap-6 items-center lg:mb-0 mb-5 lg:border-b-0 border-b-[1px] border-b-DarkGrayishCyan  lg:p-0 py-5">
+          <img src="./images/photosnap.svg" alt="Photosnap logo" class="w-20 -top-10 lg:top-auto  lg:relative absolute">
+          <div class="space-y-2">
+            <div class="flex gap-4 font-semibold items-center">
+              <p class="text-DesaturatedDarkCyan">Photosnap</p>
+              <p class="px-3 py-[2px] ml-3 lg:m-0 text-LightGrayishCyanFilter rounded-full bg-DesaturatedDarkCyan">New!
+              </p>
+              <p class="px-3 py-[2px] text-LightGrayishCyanFilter rounded-full bg-VeryDarkGrayishCyan">Featured</p>
+            </div>
+            <h2 class="text-[20px] font-bold hover:text-DesaturatedDarkCyan cursor-pointer text-VeryDarkGrayishCyan">
+              Senior Frontend Developer</h2>
+            <div class="flex items-center gap-5 text-DarkGrayishCyan text-[17px] font-medium">
+              <time datetime="2023-10-01">1d ago</time>
+              <span class="w-[3px] aspect-square bg-DarkGrayishCyan"></span>
+              <p>Full Time</p>
+              <span class="w-[3px] aspect-square bg-DarkGrayishCyan"></span>
+              <p>USA only</p>
+            </div>
+          </div>
+        </header>
+        <div>
+          <ul
+            class="flex flex-wrap  gap-5 [&>li]:bg-LightGrayishCyanFilter [&>li]:py-1 [&>li]:px-2  items-center text-DesaturatedDarkCyan font-semibold text-[18px] [&>li]:rounded-md">
+            <li
+              class="hover:bg-DesaturatedDarkCyan cursor-pointer hover:text-LightGrayishCyanFilter transition-all duration-300">
+              Frontend</li>
+            <li
+              class="hover:bg-DesaturatedDarkCyan cursor-pointer hover:text-LightGrayishCyanFilter transition-all duration-300">
+              Senior</li>
+            <li
+              class="hover:bg-DesaturatedDarkCyan cursor-pointer hover:text-LightGrayishCyanFilter transition-all duration-300">
+              HTML</li>
+            <li
+              class="hover:bg-DesaturatedDarkCyan cursor-pointer hover:text-LightGrayishCyanFilter transition-all duration-300">
+              CSS</li>
+            <li
+              class="hover:bg-DesaturatedDarkCyan cursor-pointer hover:text-LightGrayishCyanFilter transition-all duration-300">
+              JavaScript</li>
+          </ul>
+        </div>
+      </article> -->
 
-    <!-- Item Start -->
-    <article>
-      <header>
-        <div>
-          <p>MyHome</p>
-        </div>
-        <h2>Junior Frontend Developer</h2>
-        <div>
-          <time datetime="2023-09-25">5d ago</time>
-          <p>Contract</p>
-          <p>USA only</p>
-        </div>
-      </header>
-      <div>
-        <h3>Role</h3>
-        <p>Frontend</p>
-        <h3>Level</h3>
-        <p>Junior</p>
-        <h3>Languages</h3>
-        <ul>
-          <li>CSS</li>
-          <li>JavaScript</li>
-        </ul>
-      </div>
-    </article>
-    <!-- Item End -->
 
-    <!-- Item Start -->
-    <article>
-      <header>
-        <div>
-          <p>Loop Studios</p>
-        </div>
-        <h2>Software Engineer</h2>
-        <div>
-          <time datetime="2023-09-24">1w ago</time>
-          <p>Full Time</p>
-          <p>Worldwide</p>
-        </div>
-      </header>
-      <div>
-        <h3>Role</h3>
-        <p>Fullstack</p>
-        <h3>Level</h3>
-        <p>Midweight</p>
-        <h3>Languages</h3>
-        <ul>
-          <li>JavaScript</li>
-          <li>Ruby</li>
-        </ul>
-        <h3>Tools</h3>
-        <ul>
-          <li>Sass</li>
-        </ul>
-      </div>
-    </article>
-    <!-- Item End -->
+
+
 
   </main>
 
 
 
   </div>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <script src="main.js"></script>
 </body>
 
 </html>
