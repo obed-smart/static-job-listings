@@ -4,9 +4,9 @@ const main = document.getElementById("main");
 const categories = document.querySelector(".categories");
 
 let filterLIst = [];
+let data;
 
 getDAta();
-// getClick();
 
 async function getDAta() {
   try {
@@ -14,7 +14,7 @@ async function getDAta() {
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
-    const data = await response.json();
+    data = await response.json();
     displayData(data);
     getClick();
   } catch (error) {
@@ -25,7 +25,7 @@ async function getDAta() {
 function displayData(data) {
   for (let [index, list] of data.entries()) {
     const item = ` <article
-        class="flex bg-white flex-col relative px-5 lg:flex-row py-6 justify-start  lg:justify-between  lg:items-center rounded-md ${
+        class="flex bg-white select-none flex-col relative px-5 lg:flex-row py-6 justify-start  lg:justify-between  lg:items-center rounded-md ${
           index === 0 || index === 1
             ? "border-l-4 border-l-DesaturatedDarkCyan"
             : ""
@@ -111,10 +111,12 @@ function getClick() {
       const buttonText = e.target.textContent.trim();
       if (!filterLIst.includes(buttonText)) {
         filterLIst.push(buttonText);
+        categories.parentNode.classList.add("flex");
         categories.parentNode.classList.remove("hidden");
       }
 
       displayFilteredOption();
+      filterCategories(data, filterLIst);
     });
   }
 }
@@ -146,24 +148,122 @@ function removefilter() {
     if (!closestFilter) return;
 
     const index = Number(closestFilter.parentNode.dataset.id);
-    console.log(index);
     if (closestFilter) {
       filterLIst.splice(index, 1);
-      console.log(filterLIst);
-      displayFilteredOption();
 
-      if(filterLIst === []){
+      if (filterLIst.length === 0) {
         categories.parentNode.classList.add("hidden");
+        categories.parentNode.classList.remove("flex");
+        getDAta();
       }
+      filterCategories(data, filterLIst);
+      displayFilteredOption();
     }
   });
 
   clearButton.addEventListener("click", () => {
     filterLIst = [];
     categories.parentNode.classList.add("hidden");
-    console.log(filterLIst);
+    categories.parentNode.classList.remove("flex");
+
     displayFilteredOption();
+    getDAta();
   });
 }
 
 removefilter();
+
+function filterCategories(jobs, keywords) {
+  const filteredCategory = jobs.filter((job) => {
+    const confiredJob = [
+      job.role,
+      job.level,
+      ...job.languages.map((language) => language),
+      ...job.tools.map((tool) => tool),
+    ];
+    return keywords.some((keyword) => confiredJob.includes(keyword));
+  });
+
+  main.innerHTML = "";
+
+  for (let [index, list] of filteredCategory.entries()) {
+    const item = ` <article
+        class="flex bg-white select-none  flex-col relative px-5 lg:flex-row py-6 justify-start  lg:justify-between  lg:items-center rounded-md ${
+          index === 0 || index === 1
+            ? "border-l-4 border-l-DesaturatedDarkCyan"
+            : ""
+        }">
+        <header
+          class="flex gap-6 items-center lg:mb-0 mb-5 lg:border-b-0 border-b-[1px] border-b-DarkGrayishCyan  lg:p-0 py-5">
+          <img src="${
+            list.logo
+          }" alt="Photosnap logo" class="w-20 -top-10 lg:top-auto  lg:relative absolute">
+          <div class="space-y-2">
+            <div class="flex gap-4 font-semibold items-center">
+              <p class="text-DesaturatedDarkCyan text-[18px]">${
+                list.company
+              }</p>
+              <p class="${
+                list.new
+                  ? "px-3 py-[2px] ml-3  uppercase text-[15px] lg:m-0 text-LightGrayishCyanFilter rounded-full bg-DesaturatedDarkCyan"
+                  : "hidden"
+              }">${list.new ? "New!" : ""}
+              </p>
+              <p class=" ${
+                list.featured
+                  ? "px-3 py-[2px] uppercase text-[15px] text-LightGrayishCyanFilter rounded-full bg-VeryDarkGrayishCyan"
+                  : "hidden"
+              }">
+              ${list.featured ? "Featured" : ""}
+              </p>
+            </div>
+            <h2 class="text-[20px] font-bold hover:text-DesaturatedDarkCyan cursor-pointer text-VeryDarkGrayishCyan">${
+              list.position
+            }</h2>
+            <div class="flex items-center gap-5 text-DarkGrayishCyan text-[17px] font-semibold">
+              <time datetime="2023-10-01">${list.postedAt}</time>
+              <span class="w-[3px] aspect-square bg-DarkGrayishCyan"></span>
+              <p>${list.contract}</p>
+              <span class="w-[3px] aspect-square bg-DarkGrayishCyan"></span>
+              <p>${list.location}</p>
+            </div>
+          </div>
+        </header>
+        <div>
+          <ul
+            class="flex option flex-wrap  gap-5 [&>li]:bg-LightGrayishCyanFilter [&>li]:py-1 [&>li]:px-2  items-center text-DesaturatedDarkCyan font-semibold text-[18px] [&>li]:rounded-md">
+            <li
+              class="hover:bg-DesaturatedDarkCyan cursor-pointer hover:text-LightGrayishCyanFilter transition-all duration-300">
+              ${list.role}</li>
+            <li
+              class="hover:bg-DesaturatedDarkCyan cursor-pointer hover:text-LightGrayishCyanFilter transition-all duration-300">
+              ${list.level}</li>
+            
+
+              ${list.languages
+                .map(
+                  (language) => `<li
+              class="hover:bg-DesaturatedDarkCyan cursor-pointer hover:text-LightGrayishCyanFilter transition-all duration-300"> ${language}
+            </li>`
+                )
+                .join(" ")}
+
+
+              ${list.tools
+                .map(
+                  (tool) => `<li
+              class="hover:bg-DesaturatedDarkCyan cursor-pointer hover:text-LightGrayishCyanFilter transition-all duration-300"> ${tool}
+            </li>`
+                )
+                .join(" ")}
+
+
+          </ul>
+        </div>
+      </article>`;
+
+    main.innerHTML += item;
+  }
+
+  getClick();
+}
