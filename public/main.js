@@ -7,6 +7,7 @@ let filterLIst = [];
 let data;
 
 getDAta();
+removefilter();
 
 async function getDAta() {
   try {
@@ -23,6 +24,8 @@ async function getDAta() {
 }
 
 function displayData(data) {
+  main.innerHTML = "";
+
   for (let [index, list] of data.entries()) {
     const item = ` <article
         class="flex bg-white select-none flex-col relative px-5 lg:flex-row py-6 justify-start  lg:justify-between  lg:items-center rounded-md ${
@@ -101,6 +104,7 @@ function displayData(data) {
 
     main.innerHTML += item;
   }
+  getClick();
 }
 
 function getClick() {
@@ -154,6 +158,7 @@ function removefilter() {
       if (filterLIst.length === 0) {
         categories.parentNode.classList.add("hidden");
         categories.parentNode.classList.remove("flex");
+
         getDAta();
       }
       filterCategories(data, filterLIst);
@@ -167,11 +172,9 @@ function removefilter() {
     categories.parentNode.classList.remove("flex");
 
     displayFilteredOption();
-    getDAta();
+    displayData(data);
   });
 }
-
-removefilter();
 
 function filterCategories(jobs, keywords) {
   const filteredCategory = jobs.filter((job) => {
