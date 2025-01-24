@@ -60,7 +60,7 @@ function displayData(data) {
             <h2 class="text-[20px] font-bold hover:text-DesaturatedDarkCyan cursor-pointer text-VeryDarkGrayishCyan">${
               list.position
             }</h2>
-            <div class="flex items-center gap-5 text-DarkGrayishCyan text-[17px] font-semibold">
+            <div class="flex items-center gap-4 lg:gap-5 text-DarkGrayishCyan text-[17px] font-semibold">
               <time datetime="2023-10-01">${list.postedAt}</time>
               <span class="w-[3px] aspect-square bg-DarkGrayishCyan"></span>
               <p>${list.contract}</p>
@@ -223,7 +223,7 @@ function filterCategories(jobs, keywords) {
             <h2 class="text-[20px] font-bold hover:text-DesaturatedDarkCyan cursor-pointer text-VeryDarkGrayishCyan">${
               list.position
             }</h2>
-            <div class="flex items-center gap-5 text-DarkGrayishCyan text-[17px] font-semibold">
+            <div class="flex items-center lg:gap-5 text-DarkGrayishCyan text-[17px] font-semibold">
               <time datetime="2023-10-01">${list.postedAt}</time>
               <span class="w-[3px] aspect-square bg-DarkGrayishCyan"></span>
               <p>${list.contract}</p>
