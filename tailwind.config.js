@@ -15,6 +15,8 @@ module.exports = {
         VeryDarkGrayishCyan: "hsl(180, 14%, 20%)",
       },
     },
+
+   
   },
   plugins: [],
 };

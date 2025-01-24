@@ -188,7 +188,7 @@ function filterCategories(jobs, keywords) {
 
   for (let [index, list] of filteredCategory.entries()) {
     const item = ` <article
-        class="flex bg-white select-none  flex-col relative px-5 lg:flex-row py-6 justify-start  lg:justify-between  lg:items-center rounded-md ${
+        class="flex bg-white   select-none  flex-col relative px-5 lg:flex-row py-6 justify-start  lg:justify-between  lg:items-center rounded-md ${
           index === 0 || index === 1
             ? "border-l-4 border-l-DesaturatedDarkCyan"
             : ""

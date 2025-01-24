@@ -28,4 +28,9 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #b30000; 
   }
+
+  .base-shadow > article{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+   
+  }
 }
