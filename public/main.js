@@ -184,7 +184,7 @@ function filterCategories(jobs, keywords) {
       ...job.languages.map((language) => language),
       ...job.tools.map((tool) => tool),
     ];
-    return keywords.some((keyword) => confiredJob.includes(keyword));
+    return keywords.every((keyword) => confiredJob.includes(keyword));
   });
 
   main.innerHTML = "";
